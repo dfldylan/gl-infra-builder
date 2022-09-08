@@ -11,12 +11,9 @@ Focus on making the most of Xray (HTTP/HTTPS/Socks/TProxy inbounds, multiple pro
         * You're using OpenWrt 22.03 branch or earlier
         * You're not using fw4
         * You know how to compile your own firmware
-    * If you compile your own firmware using master branch, revert these commits manually in the following order
-        * [`a74a853d0d9c716bcaf1878eecbdc3860d28c88e`](https://github.com/openwrt/openwrt/commit/a74a853d0d9c716bcaf1878eecbdc3860d28c88e)
-        * [`bde367255cc9307e2a15b2b3bb3a2c24938c61f6`](https://github.com/openwrt/openwrt/commit/bde367255cc9307e2a15b2b3bb3a2c24938c61f6)
-        * [`879dd95f4360978a2b5da1f3b9e04ee0311c9432`](https://github.com/openwrt/openwrt/commit/879dd95f4360978a2b5da1f3b9e04ee0311c9432)
-        * [`8704e75d259f6aba23a83ed680b3e15aa0dfb953`](https://github.com/openwrt/openwrt/commit/8704e75d259f6aba23a83ed680b3e15aa0dfb953)
-    * If you use SNAPSHOT versions, wait for a fix or switch to fw3 for now
+    * If you use SNAPSHOT (aka branch master) versions
+        * If you compile your own firmware, apply [this patch](https://github.com/openwrt/openwrt/pull/10446) to manually update to nftables 1.0.5
+        * otherwise wait for a fix or switch to fw3 for now
 * Support for nftables / firewall4 is **experimental** and
     * only works with OpenWrt 22.03 versions or master branch with firewall4 as the only firewall implementation
     * may **NOT** be as stable as the old implementation using iptables and fw3 due to the lack of hooking facilities in fw4. However it should be good enough for daily use so if you encounter problems please report.
@@ -51,6 +48,9 @@ Focus on making the most of Xray (HTTP/HTTPS/Socks/TProxy inbounds, multiple pro
 * 2022-06-05 feat: shadowsocks-2022 UDP over TCP support
 * 2022-06-14 feat: multiple geoip direct code
 * 2022-06-19 feat: skip proxy for specific uids / gids (nftables support only)
+* 2022-08-07 fix: avoid duplicated items in generated nftables ruleset
+* 2022-08-08 fix: make sure forwarded IPs are always forwarded to Xray even for reserved addresses. Xray may not forward those requests so that manner may be changed later.
+* 2022-08-13 fix: apply 2022-08-08 fix to iptables as well
 
 ## Changelog 2021
 
@@ -100,3 +100,7 @@ Focus on making the most of Xray (HTTP/HTTPS/Socks/TProxy inbounds, multiple pro
 * [x] transparent proxy access control for LAN
 * [x] try to be compatible with [OpenWrt Packages: xray-core](https://github.com/openwrt/packages/tree/master/net/xray-core)
 * [ ] Better DNS module implementation like DoH (may involve breaking changes)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yichya/luci-app-xray&type=Date)](https://star-history.com/#yichya/luci-app-xray&Date)

@@ -1,5 +1,5 @@
 # Copyright (C) 2020 Lienol <lawlienol@gmail.com>
-# https://github.com/Lienol/openwrt-package.git^d607aef7267d3e3c9c13a74d3f40fbbbfd4020e1
+# https://github.com/Lienol/openwrt-package.git^9d7c178e21d5e2cceba0dcf254d46746e8d1e5cd
 # This is free software, licensed under the GNU General Public License v3.
 #
 

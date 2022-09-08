@@ -1,8 +1,8 @@
-# https://github.com/yichya/luci-app-xray.git^53b49746d9f88faa25d40ff4624ab02a6a5be7f6
+# https://github.com/yichya/luci-app-xray.git^005bc4096b33f6394aaf91efb59c2880cfc55acc
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-xray
-PKG_VERSION:=1.15.0
+PKG_VERSION:=1.15.3
 PKG_RELEASE:=1
 
 PKG_LICENSE:=MPLv2

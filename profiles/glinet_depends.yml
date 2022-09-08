@@ -99,7 +99,6 @@ packages:
   - wpad-openssl
   - luci-i18n-xray-zh-cn
   - luci-app-socat
-  - luci-app-uugamebooster
   - uugamebooster
 
 
